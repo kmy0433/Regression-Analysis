@@ -1,4 +1,4 @@
-# ±×·¡ÇÁ pdf ÆÄÀÏ ÂüÁ¶
+# ê·¸ë˜í”„ ë° ì„¤ëª…ì€ pdf íŒŒì¼ ì°¸ì¡°
 
 ### chapter6
 
@@ -6,7 +6,7 @@ library(dplyr)
 library(ggplot2)
 library(car)
 
-## 6.9¹ø
+## 6.9ë²ˆ
 # a)
 data6_9<-read.table("C:/Users/KimMinyoung/Documents/CH06PR09.txt")
 names(data6_9)<-c("Y","X1","X2","X3")
@@ -28,7 +28,7 @@ pairs(data6_9)
 # correlation matrix
 cor(data6_9)
 
-## 6.10¹ø
+## 6.10ë²ˆ
 # a)
 dx<-cbind(rep(1,52),data6_9$X1,data6_9$X2,data6_9$X3)
 beta<-solve(t(dx)%*%dx)%*%t(dx)%*%data6_9$Y
@@ -65,7 +65,7 @@ abs_d2<-abs(d2$resid-median(d2$resid))
 t.test(abs_d1,abs_d2,var.equal = TRUE)
 
 
-## 6.11¹ø
+## 6.11ë²ˆ
 
 # a)
 
@@ -85,14 +85,14 @@ summary(data6_9.lm)
 anova(data6_9.lm)
 
 
-## 6.12¹ø
+## 6.12ë²ˆ
 
 ggplot(data6_9,aes(X2,Y))+geom_point(aes(x=7.2,y=4370.016),size=4)+geom_smooth()
 
 ggplot(data6_9,aes(X2,Y))+geom_point(aes(x=9.9,y=4334.457),size=4)+geom_smooth()
 
 
-## 6.18¹ø
+## 6.18ë²ˆ
 
 # a)
 data6_18 <-read.table("c:/Users/KimMinyoung/Documents/CH06PR18.txt")
@@ -162,7 +162,7 @@ MSE<-SSE/(81-5)
 F<-MSR/MSE
 paste("F :",F,"MSE :",MSE,"MSR :",MSR, "P-Value :",1-pf(F,4,81-5))
 
-# °á°úÃ¢
+# ê²°ê³¼ì°½
 data6_18.lm <- lm(Y~X1+X2+X3+X4, data=data6_18)
 data6_18.lm
 summary(data6_18.lm)
@@ -170,7 +170,7 @@ anova(data6_18.lm)
 
 # chapter7
 
-# 7.4¹ø
+# 7.4ë²ˆ
 pr04<-read.table("C:/Users/KimMinyoung/Documents/CH06PR09.txt")
 names(pr04)<-c("Y","X1","X2","X3")
 lm.pr04.132<-lm(Y~X1+X3+X2,data=pr04)
@@ -178,7 +178,7 @@ summary(lm.pr04.132)
 anova(lm.pr04.132)
 qf(0.95,1,48)
 
-## 7.5¹ø
+## 7.5ë²ˆ
 
 pr05<-read.table("C:/Users/KimMinyoung/Documents/CH06PR15.txt")
 names(pr05)<-c("Y","X1","X2","X3")
@@ -190,7 +190,7 @@ qf(0.975,1,42)
 
 
 
-## 7.6¹ø
+## 7.6ë²ˆ
 
 lm.pr05.123<-lm(Y~X1+X2+X3,data=pr05)
 summary(lm.pr05.123)
@@ -205,7 +205,7 @@ pval
 
 
 
-## 7.13¹ø
+## 7.13ë²ˆ
 
 pr13<-read.table("c:/Users/KimMinyoung/Documents/CH06PR09.txt")
 names(pr13)<-c("Y","X1","X2","X3")
@@ -281,7 +281,7 @@ X3.bar <- mean(pr18$X3)
 beta.0<-y.bar-beta.1*X1.bar-beta.2*X2.bar-beta.3*X3.bar
 beta.0
 
-## 7.26¹ø
+## 7.26ë²ˆ
 # correlation matrix
 cor(pr18)
 
@@ -298,13 +298,13 @@ lm.pr26.32<-lm(Y~X3+X2,data=pr18)
 anova(lm.pr26.2)
 anova(lm.pr26.32)
 
-# Chapter 6 6.15¹ø
+# Chapter 6 6.15ë²ˆ
 lm.pr18<-lm(Y~X1+X2+X3,data=pr18)
 summary(lm.pr18)
 
 # chapter8
 
-## 8.4¹ø
+## 8.4ë²ˆ
 # a)
 pr04<-read.table("C:/Users/KimMinyoung/Documents/CH01PR27.txt")
 names(pr04)<-c("Y","X")
@@ -345,7 +345,7 @@ X.square<-X^2
 cor(X,X.square)
 
 
-## 8.5¹ø
+## 8.5ë²ˆ
 # a)
 plot(lm.pr04$fitted,lm.pr04$resid)
 plot(x,lm.pr04$resid)
@@ -361,7 +361,7 @@ anova(smaller,full)
 lm.pr04.3<-lm(Y~x+I(x^2)+I(x^3),data=pr04)
 summary(lm.pr04.3)
 
-## 8.8¹ø
+## 8.8ë²ˆ
 # a)
 pr08<-read.table("C:/Users/KimMinyoung/Documents/CH06PR18.txt")
 names(pr08)<-c("Y","X1","X2","X3","X4")
@@ -386,7 +386,7 @@ estimation
 lm.pr08.origin<-lm(Y~X1+I(X1^2)+X2+X4,data=pr08)
 summary(lm.pr08.origin)
 
-## 8.15¹ø
+## 8.15ë²ˆ
 
 # b)
 pr15<-read.table("C:/Users/KimMinyoung/Documents/CH01PR20.txt")
